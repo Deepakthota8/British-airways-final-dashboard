@@ -1,0 +1,2993 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1112.0850                               -->
+<workbook original-version='18.1' source-build='2024.3.1 (20243.24.1112.0850)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <DatagraphCoreV1 />
+    <_.fcp.DatagraphNodeAxisTitle.true...DatagraphNodeAxisTitle />
+    <DatagraphNodeSingleValueFieldV1 />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Pick a metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;overall rating&quot;'>
+        <calculation class='tableau' formula='&quot;overall rating&quot;' />
+        <members>
+          <member value='&quot;overall rating&quot;' />
+          <member value='&quot;cabin staff service &quot;' />
+          <member value='&quot;Entertainment&quot;' />
+          <member value='&quot;Food&quot;' />
+          <member value='&quot;Ground service&quot;' />
+          <member value='&quot;Seat Comfort&quot;' />
+          <member value='&quot;value&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='ba_reviews+' inline='true' name='federated.1bshm6q0p037g21ejcugi0g4hg3r' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='ba_reviews' name='textscan.0gz456f1g3tnd11dxgkb70759blz'>
+            <connection class='textscan' directory='C:/Users/HOME/Downloads' filename='ba_reviews.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.0gz456f1g3tnd11dxgkb70759blz' name='ba_reviews.csv' table='[ba_reviews#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='header' ordinal='0' />
+              <column datatype='string' name='author' ordinal='1' />
+              <column datatype='date' name='date' ordinal='2' />
+              <column datatype='string' name='place' ordinal='3' />
+              <column datatype='string' name='content' ordinal='4' />
+              <column datatype='string' name='aircraft' ordinal='5' />
+              <column datatype='string' name='traveller_type' ordinal='6' />
+              <column datatype='string' name='seat_type' ordinal='7' />
+              <column datatype='string' name='route' ordinal='8' />
+              <column datatype='date' name='date_flown' ordinal='9' />
+              <column datatype='string' name='recommended' ordinal='10' />
+              <column datatype='string' name='trip_verified' ordinal='11' />
+              <column datatype='integer' name='rating' ordinal='12' />
+              <column datatype='integer' name='seat_comfort' ordinal='13' />
+              <column datatype='integer' name='cabin_staff_service' ordinal='14' />
+              <column datatype='integer' name='food_beverages' ordinal='15' />
+              <column datatype='integer' name='ground_service' ordinal='16' />
+              <column datatype='integer' name='value_for_money' ordinal='17' />
+              <column datatype='integer' name='entertainment' ordinal='18' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0gz456f1g3tnd11dxgkb70759blz' name='Countries.csv' table='[Countries#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='Country' ordinal='0' />
+              <column datatype='string' name='Code' ordinal='1' />
+              <column datatype='string' name='Continent' ordinal='2' />
+              <column datatype='string' name='Region' ordinal='3' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Countries.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>header</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[header]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>header</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>author</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[author]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>author</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>place</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[place]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>place</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>content</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[content]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>content</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>aircraft</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[aircraft]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>aircraft</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>traveller_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[traveller_type]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>traveller_type</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>seat_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[seat_type]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>seat_type</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>route</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[route]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>route</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_flown</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[date_flown]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>date_flown</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>recommended</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[recommended]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>recommended</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>trip_verified</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[trip_verified]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>trip_verified</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rating]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>rating</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>seat_comfort</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[seat_comfort]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>seat_comfort</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cabin_staff_service</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cabin_staff_service]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>cabin_staff_service</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>food_beverages</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[food_beverages]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>food_beverages</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ground_service</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ground_service]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>ground_service</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>value_for_money</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[value_for_money]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>value_for_money</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>entertainment</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[entertainment]</local-name>
+            <parent-name>[ba_reviews.csv]</parent-name>
+            <remote-alias>entertainment</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country]</local-name>
+            <parent-name>[Countries.csv]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Countries.csv_4812A20954BD447789ECABCA967B06AE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Code]</local-name>
+            <parent-name>[Countries.csv]</parent-name>
+            <remote-alias>Code</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Countries.csv_4812A20954BD447789ECABCA967B06AE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Continent</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Continent]</local-name>
+            <parent-name>[Countries.csv]</parent-name>
+            <remote-alias>Continent</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Countries.csv_4812A20954BD447789ECABCA967B06AE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Region]</local-name>
+            <parent-name>[Countries.csv]</parent-name>
+            <remote-alias>Region</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[Countries.csv_4812A20954BD447789ECABCA967B06AE]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Aircraft (group)]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[aircraft]' new-bin='true'>
+          <bin default-name='false' value='&quot;various&quot;'>
+            <value>&quot;777&quot;</value>
+            <value>&quot;777-300 and A320&quot;</value>
+            <value>&quot;787&quot;</value>
+            <value>&quot;A19&quot;</value>
+            <value>&quot;A219&quot;</value>
+            <value>&quot;A230&quot;</value>
+            <value>&quot;A318&quot;</value>
+            <value>&quot;A319 / A380 / Boeing 737&quot;</value>
+            <value>&quot;A319 / Boeing 747&quot;</value>
+            <value>&quot;A319 / Boeing 747-400&quot;</value>
+            <value>&quot;A319 / Boeing 777&quot;</value>
+            <value>&quot;A319 / Boeing 787-8&quot;</value>
+            <value>&quot;A319 / Boeing 787-9&quot;</value>
+            <value>&quot;A319 / Boeing 789&quot;</value>
+            <value>&quot;A319 / Boeing777&quot;</value>
+            <value>&quot;A319/320&quot;</value>
+            <value>&quot;A319/A320&quot;</value>
+            <value>&quot;A320 / Boeing 747-400&quot;</value>
+            <value>&quot;A320 / Boeing 767&quot;</value>
+            <value>&quot;A320 / Boeing 777&quot;</value>
+            <value>&quot;A320 / Boeing 777-200&quot;</value>
+            <value>&quot;A320 / Boeing 787&quot;</value>
+            <value>&quot;A320 / Boeing 787-9&quot;</value>
+            <value>&quot;A320 A350&quot;</value>
+            <value>&quot;A320 Finnair&quot;</value>
+            <value>&quot;A320 neo&quot;</value>
+            <value>&quot;A320 Neo&quot;</value>
+            <value>&quot;A320-200&quot;</value>
+            <value>&quot;A320-233&quot;</value>
+            <value>&quot;A320, A380&quot;</value>
+            <value>&quot;A320, Boeing 787&quot;</value>
+            <value>&quot;A320/319&quot;</value>
+            <value>&quot;A320/A319&quot;</value>
+            <value>&quot;A320/B788&quot;</value>
+            <value>&quot;A320neo&quot;</value>
+            <value>&quot;A320Neo&quot;</value>
+            <value>&quot;A320NEO&quot;</value>
+            <value>&quot;A321 / Boeing 747-400&quot;</value>
+            <value>&quot;A321 / Boeing 777&quot;</value>
+            <value>&quot;A321 / Boeing 777-300&quot;</value>
+            <value>&quot;A321 / Boeing 787-9&quot;</value>
+            <value>&quot;A321 neo&quot;</value>
+            <value>&quot;A321 Neo&quot;</value>
+            <value>&quot;A321-200&quot;</value>
+            <value>&quot;A321-neo&quot;</value>
+            <value>&quot;A321neo&quot;</value>
+            <value>&quot;A321Neo&quot;</value>
+            <value>&quot;A321NEO&quot;</value>
+            <value>&quot;A322&quot;</value>
+            <value>&quot;A330&quot;</value>
+            <value>&quot;A340-300&quot;</value>
+            <value>&quot;A340-300, A320&quot;</value>
+            <value>&quot;A350&quot;</value>
+            <value>&quot;A350-1000&quot;</value>
+            <value>&quot;A380 / A319&quot;</value>
+            <value>&quot;A380 / A320&quot;</value>
+            <value>&quot;A380 / Boeing 747-400&quot;</value>
+            <value>&quot;A380 / Boeing 777&quot;</value>
+            <value>&quot;A380 and 747&quot;</value>
+            <value>&quot;A380 and Boeing 747&quot;</value>
+            <value>&quot;A380 and Boeing 767&quot;</value>
+            <value>&quot;A380 and Boeing 777&quot;</value>
+            <value>&quot;A380-800&quot;</value>
+            <value>&quot;A380/A320&quot;</value>
+            <value>&quot;Airbus A32&quot;</value>
+            <value>&quot;Airbus A320&quot;</value>
+            <value>&quot;B737-400 / A380 / A319&quot;</value>
+            <value>&quot;B747-400&quot;</value>
+            <value>&quot;B747-400 in retro&quot;</value>
+            <value>&quot;B777&quot;</value>
+            <value>&quot;B777-200&quot;</value>
+            <value>&quot;B777-300ER / A320 / A380&quot;</value>
+            <value>&quot;Boeing 737&quot;</value>
+            <value>&quot;Boeing 737 800&quot;</value>
+            <value>&quot;Boeing 737-800&quot;</value>
+            <value>&quot;Boeing 744&quot;</value>
+            <value>&quot;Boeing 747 / 777&quot;</value>
+            <value>&quot;Boeing 747 / A320&quot;</value>
+            <value>&quot;Boeing 747 / A380&quot;</value>
+            <value>&quot;Boeing 747 &amp; A319&quot;</value>
+            <value>&quot;Boeing 747 400&quot;</value>
+            <value>&quot;Boeing 747 and Boeing 777&quot;</value>
+            <value>&quot;Boeing 747-400 / 777&quot;</value>
+            <value>&quot;Boeing 747-400 / 777-200&quot;</value>
+            <value>&quot;Boeing 747-400 / A319&quot;</value>
+            <value>&quot;Boeing 747-400 / A320&quot;</value>
+            <value>&quot;Boeing 747-400 / A380&quot;</value>
+            <value>&quot;Boeing 747-400 /A380&quot;</value>
+            <value>&quot;Boeing 747-400 &amp; A320/321&quot;</value>
+            <value>&quot;Boeing 757&quot;</value>
+            <value>&quot;Boeing 767&quot;</value>
+            <value>&quot;Boeing 767-300&quot;</value>
+            <value>&quot;Boeing 767, A319&quot;</value>
+            <value>&quot;Boeing 777&quot;</value>
+            <value>&quot;Boeing 777 - 200&quot;</value>
+            <value>&quot;Boeing 777 -200&quot;</value>
+            <value>&quot;Boeing 777 / 747&quot;</value>
+            <value>&quot;Boeing 777 / A320&quot;</value>
+            <value>&quot;Boeing 777 / A380&quot;</value>
+            <value>&quot;Boeing 777 200&quot;</value>
+            <value>&quot;Boeing 777 200/300&quot;</value>
+            <value>&quot;Boeing 777 and Boeing 787&quot;</value>
+            <value>&quot;Boeing 777-200 / 747-400&quot;</value>
+            <value>&quot;Boeing 777-200 / 787-9 / A319/ 320&quot;</value>
+            <value>&quot;Boeing 777-200 and A319&quot;</value>
+            <value>&quot;Boeing 777-200 ER&quot;</value>
+            <value>&quot;Boeing 777-200/300&quot;</value>
+            <value>&quot;Boeing 777-200ER&quot;</value>
+            <value>&quot;Boeing 777-236 ER&quot;</value>
+            <value>&quot;Boeing 777-300&quot;</value>
+            <value>&quot;Boeing 777-300 / A380&quot;</value>
+            <value>&quot;Boeing 777-300ER&quot;</value>
+            <value>&quot;Boeing 777-300ER / A320&quot;</value>
+            <value>&quot;Boeing 787 / A320&quot;</value>
+            <value>&quot;Boeing 787 Dreamliner&quot;</value>
+            <value>&quot;Boeing 787-10&quot;</value>
+            <value>&quot;Boeing 787-8&quot;</value>
+            <value>&quot;Boeing 787-8 / 787-9&quot;</value>
+            <value>&quot;Boeing 787-800&quot;</value>
+            <value>&quot;Boeing 787-9&quot;</value>
+            <value>&quot;Boeing 787-9 / 777&quot;</value>
+            <value>&quot;Boeing 787-9 / A319&quot;</value>
+            <value>&quot;Boeing 787-9 / A380-800&quot;</value>
+            <value>&quot;Boeing 787-9, A320-200&quot;</value>
+            <value>&quot;Boeing 787-9, A380&quot;</value>
+            <value>&quot;Boeing 787-900&quot;</value>
+            <value>&quot;Boeing 787(9)&quot;</value>
+            <value>&quot;Boieng 777-200&quot;</value>
+            <value>&quot;Dreamliner&quot;</value>
+            <value>&quot;E-190&quot;</value>
+            <value>&quot;E170 / A319&quot;</value>
+            <value>&quot;E190&quot;</value>
+            <value>&quot;EMB190&quot;</value>
+            <value>&quot;Embraer&quot;</value>
+            <value>&quot;Embraer 170&quot;</value>
+            <value>&quot;Embraer 190&quot;</value>
+            <value>&quot;Embraer 195&quot;</value>
+            <value>&quot;Embraer-190&quot;</value>
+            <value>&quot;SAAB 2000&quot;</value>
+            <value>&quot;Various&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column caption='Metric Selected' datatype='integer' name='[Calculation_815151560654557184]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='case[Parameters].[Parameter 1]&#13;&#10;when&apos;overall rating&apos;then[rating]&#13;&#10;when&apos;cabin staff service&apos;then[cabin_staff_service]&#13;&#10;when&apos;Entertainment&apos;then[entertainment]&#13;&#10;when&apos;food&apos;then[food_beverages]&#13;&#10;when&apos;ground service&apos;then[ground_service]&#13;&#10;when&apos;seat comfort&apos;then[seat_comfort]&#13;&#10;when&apos;value&apos;then[value_for_money]&#13;&#10;END' />
+      </column>
+      <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Countries.csv' datatype='table' name='[__tableau_internal_object_id__].[Countries.csv_4812A20954BD447789ECABCA967B06AE]' role='measure' type='quantitative' />
+      <column caption='ba_reviews.csv' datatype='table' name='[__tableau_internal_object_id__].[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]' role='measure' type='quantitative' />
+      <column caption='Aircraft' datatype='string' name='[aircraft]' role='dimension' type='nominal' />
+      <column caption='Author' datatype='string' name='[author]' role='dimension' type='nominal' />
+      <column caption='Cabin Staff Service' datatype='integer' name='[cabin_staff_service]' role='measure' type='quantitative' />
+      <column caption='Content' datatype='string' name='[content]' role='dimension' type='nominal' />
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='quantitative' />
+      <column caption='Date Flown' datatype='date' name='[date_flown]' role='dimension' type='ordinal' />
+      <column caption='Entertainment' datatype='integer' name='[entertainment]' role='measure' type='quantitative' />
+      <column caption='Food Beverages' datatype='integer' name='[food_beverages]' role='measure' type='quantitative' />
+      <column caption='Ground Service' datatype='integer' name='[ground_service]' role='measure' type='quantitative' />
+      <column caption='Header' datatype='string' name='[header]' role='dimension' type='nominal' />
+      <column caption='Place' datatype='string' name='[place]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+      <column caption='Rating' datatype='integer' name='[rating]' role='measure' type='quantitative' />
+      <column caption='Recommended' datatype='string' name='[recommended]' role='dimension' type='nominal' />
+      <column caption='Route' datatype='string' name='[route]' role='dimension' type='nominal' />
+      <column caption='Seat Comfort' datatype='integer' name='[seat_comfort]' role='measure' type='quantitative' />
+      <column caption='Seat Type' datatype='string' name='[seat_type]' role='dimension' type='nominal' />
+      <column caption='Traveller Type' datatype='string' name='[traveller_type]' role='dimension' type='nominal' />
+      <column caption='Trip Verified' datatype='string' name='[trip_verified]' role='dimension' type='nominal' />
+      <column caption='Value For Money' datatype='integer' name='[value_for_money]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Pick a metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;overall rating&quot;'>
+          <calculation class='tableau' formula='&quot;overall rating&quot;' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='Countries.csv' id='Countries.csv_4812A20954BD447789ECABCA967B06AE'>
+            <properties context=''>
+              <relation connection='textscan.0gz456f1g3tnd11dxgkb70759blz' name='Countries.csv' table='[Countries#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='Country' ordinal='0' />
+                  <column datatype='string' name='Code' ordinal='1' />
+                  <column datatype='string' name='Continent' ordinal='2' />
+                  <column datatype='string' name='Region' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='ba_reviews.csv' id='ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE'>
+            <properties context=''>
+              <relation connection='textscan.0gz456f1g3tnd11dxgkb70759blz' name='ba_reviews.csv' table='[ba_reviews#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='header' ordinal='0' />
+                  <column datatype='string' name='author' ordinal='1' />
+                  <column datatype='date' name='date' ordinal='2' />
+                  <column datatype='string' name='place' ordinal='3' />
+                  <column datatype='string' name='content' ordinal='4' />
+                  <column datatype='string' name='aircraft' ordinal='5' />
+                  <column datatype='string' name='traveller_type' ordinal='6' />
+                  <column datatype='string' name='seat_type' ordinal='7' />
+                  <column datatype='string' name='route' ordinal='8' />
+                  <column datatype='date' name='date_flown' ordinal='9' />
+                  <column datatype='string' name='recommended' ordinal='10' />
+                  <column datatype='string' name='trip_verified' ordinal='11' />
+                  <column datatype='integer' name='rating' ordinal='12' />
+                  <column datatype='integer' name='seat_comfort' ordinal='13' />
+                  <column datatype='integer' name='cabin_staff_service' ordinal='14' />
+                  <column datatype='integer' name='food_beverages' ordinal='15' />
+                  <column datatype='integer' name='ground_service' ordinal='16' />
+                  <column datatype='integer' name='value_for_money' ordinal='17' />
+                  <column datatype='integer' name='entertainment' ordinal='18' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[place]' />
+              <expression op='[Country]' />
+            </expression>
+            <first-end-point object-id='ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE' />
+            <second-end-point object-id='Countries.csv_4812A20954BD447789ECABCA967B06AE' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <shared-views>
+    <shared-view name='federated.1bshm6q0p037g21ejcugi0g4hg3r'>
+      <datasources>
+        <datasource caption='ba_reviews+' name='federated.1bshm6q0p037g21ejcugi0g4hg3r' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1bshm6q0p037g21ejcugi0g4hg3r'>
+        <column datatype='string' name='[Aircraft (group)]' role='dimension' type='nominal'>
+          <calculation class='categorical-bin' column='[aircraft]' new-bin='true'>
+            <bin default-name='false' value='&quot;various&quot;'>
+              <value>&quot;777&quot;</value>
+              <value>&quot;777-300 and A320&quot;</value>
+              <value>&quot;787&quot;</value>
+              <value>&quot;A19&quot;</value>
+              <value>&quot;A219&quot;</value>
+              <value>&quot;A230&quot;</value>
+              <value>&quot;A318&quot;</value>
+              <value>&quot;A319 / A380 / Boeing 737&quot;</value>
+              <value>&quot;A319 / Boeing 747&quot;</value>
+              <value>&quot;A319 / Boeing 747-400&quot;</value>
+              <value>&quot;A319 / Boeing 777&quot;</value>
+              <value>&quot;A319 / Boeing 787-8&quot;</value>
+              <value>&quot;A319 / Boeing 787-9&quot;</value>
+              <value>&quot;A319 / Boeing 789&quot;</value>
+              <value>&quot;A319 / Boeing777&quot;</value>
+              <value>&quot;A319/320&quot;</value>
+              <value>&quot;A319/A320&quot;</value>
+              <value>&quot;A320 / Boeing 747-400&quot;</value>
+              <value>&quot;A320 / Boeing 767&quot;</value>
+              <value>&quot;A320 / Boeing 777&quot;</value>
+              <value>&quot;A320 / Boeing 777-200&quot;</value>
+              <value>&quot;A320 / Boeing 787&quot;</value>
+              <value>&quot;A320 / Boeing 787-9&quot;</value>
+              <value>&quot;A320 A350&quot;</value>
+              <value>&quot;A320 Finnair&quot;</value>
+              <value>&quot;A320 neo&quot;</value>
+              <value>&quot;A320 Neo&quot;</value>
+              <value>&quot;A320-200&quot;</value>
+              <value>&quot;A320-233&quot;</value>
+              <value>&quot;A320, A380&quot;</value>
+              <value>&quot;A320, Boeing 787&quot;</value>
+              <value>&quot;A320/319&quot;</value>
+              <value>&quot;A320/A319&quot;</value>
+              <value>&quot;A320/B788&quot;</value>
+              <value>&quot;A320neo&quot;</value>
+              <value>&quot;A320Neo&quot;</value>
+              <value>&quot;A320NEO&quot;</value>
+              <value>&quot;A321 / Boeing 747-400&quot;</value>
+              <value>&quot;A321 / Boeing 777&quot;</value>
+              <value>&quot;A321 / Boeing 777-300&quot;</value>
+              <value>&quot;A321 / Boeing 787-9&quot;</value>
+              <value>&quot;A321 neo&quot;</value>
+              <value>&quot;A321 Neo&quot;</value>
+              <value>&quot;A321-200&quot;</value>
+              <value>&quot;A321-neo&quot;</value>
+              <value>&quot;A321neo&quot;</value>
+              <value>&quot;A321Neo&quot;</value>
+              <value>&quot;A321NEO&quot;</value>
+              <value>&quot;A322&quot;</value>
+              <value>&quot;A330&quot;</value>
+              <value>&quot;A340-300&quot;</value>
+              <value>&quot;A340-300, A320&quot;</value>
+              <value>&quot;A350&quot;</value>
+              <value>&quot;A350-1000&quot;</value>
+              <value>&quot;A380 / A319&quot;</value>
+              <value>&quot;A380 / A320&quot;</value>
+              <value>&quot;A380 / Boeing 747-400&quot;</value>
+              <value>&quot;A380 / Boeing 777&quot;</value>
+              <value>&quot;A380 and 747&quot;</value>
+              <value>&quot;A380 and Boeing 747&quot;</value>
+              <value>&quot;A380 and Boeing 767&quot;</value>
+              <value>&quot;A380 and Boeing 777&quot;</value>
+              <value>&quot;A380-800&quot;</value>
+              <value>&quot;A380/A320&quot;</value>
+              <value>&quot;Airbus A32&quot;</value>
+              <value>&quot;Airbus A320&quot;</value>
+              <value>&quot;B737-400 / A380 / A319&quot;</value>
+              <value>&quot;B747-400&quot;</value>
+              <value>&quot;B747-400 in retro&quot;</value>
+              <value>&quot;B777&quot;</value>
+              <value>&quot;B777-200&quot;</value>
+              <value>&quot;B777-300ER / A320 / A380&quot;</value>
+              <value>&quot;Boeing 737&quot;</value>
+              <value>&quot;Boeing 737 800&quot;</value>
+              <value>&quot;Boeing 737-800&quot;</value>
+              <value>&quot;Boeing 744&quot;</value>
+              <value>&quot;Boeing 747 / 777&quot;</value>
+              <value>&quot;Boeing 747 / A320&quot;</value>
+              <value>&quot;Boeing 747 / A380&quot;</value>
+              <value>&quot;Boeing 747 &amp; A319&quot;</value>
+              <value>&quot;Boeing 747 400&quot;</value>
+              <value>&quot;Boeing 747 and Boeing 777&quot;</value>
+              <value>&quot;Boeing 747-400 / 777&quot;</value>
+              <value>&quot;Boeing 747-400 / 777-200&quot;</value>
+              <value>&quot;Boeing 747-400 / A319&quot;</value>
+              <value>&quot;Boeing 747-400 / A320&quot;</value>
+              <value>&quot;Boeing 747-400 / A380&quot;</value>
+              <value>&quot;Boeing 747-400 /A380&quot;</value>
+              <value>&quot;Boeing 747-400 &amp; A320/321&quot;</value>
+              <value>&quot;Boeing 757&quot;</value>
+              <value>&quot;Boeing 767&quot;</value>
+              <value>&quot;Boeing 767-300&quot;</value>
+              <value>&quot;Boeing 767, A319&quot;</value>
+              <value>&quot;Boeing 777&quot;</value>
+              <value>&quot;Boeing 777 - 200&quot;</value>
+              <value>&quot;Boeing 777 -200&quot;</value>
+              <value>&quot;Boeing 777 / 747&quot;</value>
+              <value>&quot;Boeing 777 / A320&quot;</value>
+              <value>&quot;Boeing 777 / A380&quot;</value>
+              <value>&quot;Boeing 777 200&quot;</value>
+              <value>&quot;Boeing 777 200/300&quot;</value>
+              <value>&quot;Boeing 777 and Boeing 787&quot;</value>
+              <value>&quot;Boeing 777-200 / 747-400&quot;</value>
+              <value>&quot;Boeing 777-200 / 787-9 / A319/ 320&quot;</value>
+              <value>&quot;Boeing 777-200 and A319&quot;</value>
+              <value>&quot;Boeing 777-200 ER&quot;</value>
+              <value>&quot;Boeing 777-200/300&quot;</value>
+              <value>&quot;Boeing 777-200ER&quot;</value>
+              <value>&quot;Boeing 777-236 ER&quot;</value>
+              <value>&quot;Boeing 777-300&quot;</value>
+              <value>&quot;Boeing 777-300 / A380&quot;</value>
+              <value>&quot;Boeing 777-300ER&quot;</value>
+              <value>&quot;Boeing 777-300ER / A320&quot;</value>
+              <value>&quot;Boeing 787 / A320&quot;</value>
+              <value>&quot;Boeing 787 Dreamliner&quot;</value>
+              <value>&quot;Boeing 787-10&quot;</value>
+              <value>&quot;Boeing 787-8&quot;</value>
+              <value>&quot;Boeing 787-8 / 787-9&quot;</value>
+              <value>&quot;Boeing 787-800&quot;</value>
+              <value>&quot;Boeing 787-9&quot;</value>
+              <value>&quot;Boeing 787-9 / 777&quot;</value>
+              <value>&quot;Boeing 787-9 / A319&quot;</value>
+              <value>&quot;Boeing 787-9 / A380-800&quot;</value>
+              <value>&quot;Boeing 787-9, A320-200&quot;</value>
+              <value>&quot;Boeing 787-9, A380&quot;</value>
+              <value>&quot;Boeing 787-900&quot;</value>
+              <value>&quot;Boeing 787(9)&quot;</value>
+              <value>&quot;Boieng 777-200&quot;</value>
+              <value>&quot;Dreamliner&quot;</value>
+              <value>&quot;E-190&quot;</value>
+              <value>&quot;E170 / A319&quot;</value>
+              <value>&quot;E190&quot;</value>
+              <value>&quot;EMB190&quot;</value>
+              <value>&quot;Embraer&quot;</value>
+              <value>&quot;Embraer 170&quot;</value>
+              <value>&quot;Embraer 190&quot;</value>
+              <value>&quot;Embraer 195&quot;</value>
+              <value>&quot;Embraer-190&quot;</value>
+              <value>&quot;SAAB 2000&quot;</value>
+              <value>&quot;Various&quot;</value>
+            </bin>
+          </calculation>
+        </column>
+        <column datatype='string' name='[Continent]' role='dimension' type='nominal' />
+        <column caption='Aircraft' datatype='string' name='[aircraft]' role='dimension' type='nominal' />
+        <column caption='Date' datatype='date' name='[date]' role='dimension' type='quantitative' />
+        <column-instance column='[Continent]' derivation='None' name='[none:Continent:nk]' pivot='key' type='nominal' />
+        <column-instance column='[seat_type]' derivation='None' name='[none:seat_type:nk]' pivot='key' type='nominal' />
+        <column-instance column='[traveller_type]' derivation='None' name='[none:traveller_type:nk]' pivot='key' type='nominal' />
+        <column caption='Seat Type' datatype='string' name='[seat_type]' role='dimension' type='nominal' />
+        <column-instance column='[date]' derivation='Month-Trunc' name='[tmn:date:qk]' pivot='key' type='quantitative' />
+        <column caption='Traveller Type' datatype='string' name='[traveller_type]' role='dimension' type='nominal' />
+      </datasource-dependencies>
+      <filter class='categorical' column='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Aircraft (group)]'>
+        <groupfilter function='level-members' level='[Aircraft (group)]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:Continent:nk]'>
+        <groupfilter function='level-members' level='[none:Continent:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:seat_type:nk]'>
+        <groupfilter function='level-members' level='[none:seat_type:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:traveller_type:nk]'>
+        <groupfilter function='level-members' level='[none:traveller_type:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='quantitative' column='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[tmn:date:qk]' included-values='in-range'>
+        <min>#2016-03-01 00:00:00#</min>
+        <max>#2023-10-01 00:00:00#</max>
+      </filter>
+    </shared-view>
+  </shared-views>
+  <worksheets>
+    <worksheet name='Aircraft'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1'>Average&lt;</run>
+            <run bold='true' fontalignment='1'>[Parameters].[Parameter 1]</run>
+            <run bold='true' fontalignment='1'>&gt;By Aircraft</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ba_reviews+' name='federated.1bshm6q0p037g21ejcugi0g4hg3r' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Pick a metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;overall rating&quot;'>
+              <calculation class='tableau' formula='&quot;overall rating&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1bshm6q0p037g21ejcugi0g4hg3r'>
+            <column datatype='string' name='[Aircraft (group)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[aircraft]' new-bin='true'>
+                <bin default-name='false' value='&quot;various&quot;'>
+                  <value>&quot;777&quot;</value>
+                  <value>&quot;777-300 and A320&quot;</value>
+                  <value>&quot;787&quot;</value>
+                  <value>&quot;A19&quot;</value>
+                  <value>&quot;A219&quot;</value>
+                  <value>&quot;A230&quot;</value>
+                  <value>&quot;A318&quot;</value>
+                  <value>&quot;A319 / A380 / Boeing 737&quot;</value>
+                  <value>&quot;A319 / Boeing 747&quot;</value>
+                  <value>&quot;A319 / Boeing 747-400&quot;</value>
+                  <value>&quot;A319 / Boeing 777&quot;</value>
+                  <value>&quot;A319 / Boeing 787-8&quot;</value>
+                  <value>&quot;A319 / Boeing 787-9&quot;</value>
+                  <value>&quot;A319 / Boeing 789&quot;</value>
+                  <value>&quot;A319 / Boeing777&quot;</value>
+                  <value>&quot;A319/320&quot;</value>
+                  <value>&quot;A319/A320&quot;</value>
+                  <value>&quot;A320 / Boeing 747-400&quot;</value>
+                  <value>&quot;A320 / Boeing 767&quot;</value>
+                  <value>&quot;A320 / Boeing 777&quot;</value>
+                  <value>&quot;A320 / Boeing 777-200&quot;</value>
+                  <value>&quot;A320 / Boeing 787&quot;</value>
+                  <value>&quot;A320 / Boeing 787-9&quot;</value>
+                  <value>&quot;A320 A350&quot;</value>
+                  <value>&quot;A320 Finnair&quot;</value>
+                  <value>&quot;A320 neo&quot;</value>
+                  <value>&quot;A320 Neo&quot;</value>
+                  <value>&quot;A320-200&quot;</value>
+                  <value>&quot;A320-233&quot;</value>
+                  <value>&quot;A320, A380&quot;</value>
+                  <value>&quot;A320, Boeing 787&quot;</value>
+                  <value>&quot;A320/319&quot;</value>
+                  <value>&quot;A320/A319&quot;</value>
+                  <value>&quot;A320/B788&quot;</value>
+                  <value>&quot;A320neo&quot;</value>
+                  <value>&quot;A320Neo&quot;</value>
+                  <value>&quot;A320NEO&quot;</value>
+                  <value>&quot;A321 / Boeing 747-400&quot;</value>
+                  <value>&quot;A321 / Boeing 777&quot;</value>
+                  <value>&quot;A321 / Boeing 777-300&quot;</value>
+                  <value>&quot;A321 / Boeing 787-9&quot;</value>
+                  <value>&quot;A321 neo&quot;</value>
+                  <value>&quot;A321 Neo&quot;</value>
+                  <value>&quot;A321-200&quot;</value>
+                  <value>&quot;A321-neo&quot;</value>
+                  <value>&quot;A321neo&quot;</value>
+                  <value>&quot;A321Neo&quot;</value>
+                  <value>&quot;A321NEO&quot;</value>
+                  <value>&quot;A322&quot;</value>
+                  <value>&quot;A330&quot;</value>
+                  <value>&quot;A340-300&quot;</value>
+                  <value>&quot;A340-300, A320&quot;</value>
+                  <value>&quot;A350&quot;</value>
+                  <value>&quot;A350-1000&quot;</value>
+                  <value>&quot;A380 / A319&quot;</value>
+                  <value>&quot;A380 / A320&quot;</value>
+                  <value>&quot;A380 / Boeing 747-400&quot;</value>
+                  <value>&quot;A380 / Boeing 777&quot;</value>
+                  <value>&quot;A380 and 747&quot;</value>
+                  <value>&quot;A380 and Boeing 747&quot;</value>
+                  <value>&quot;A380 and Boeing 767&quot;</value>
+                  <value>&quot;A380 and Boeing 777&quot;</value>
+                  <value>&quot;A380-800&quot;</value>
+                  <value>&quot;A380/A320&quot;</value>
+                  <value>&quot;Airbus A32&quot;</value>
+                  <value>&quot;Airbus A320&quot;</value>
+                  <value>&quot;B737-400 / A380 / A319&quot;</value>
+                  <value>&quot;B747-400&quot;</value>
+                  <value>&quot;B747-400 in retro&quot;</value>
+                  <value>&quot;B777&quot;</value>
+                  <value>&quot;B777-200&quot;</value>
+                  <value>&quot;B777-300ER / A320 / A380&quot;</value>
+                  <value>&quot;Boeing 737&quot;</value>
+                  <value>&quot;Boeing 737 800&quot;</value>
+                  <value>&quot;Boeing 737-800&quot;</value>
+                  <value>&quot;Boeing 744&quot;</value>
+                  <value>&quot;Boeing 747 / 777&quot;</value>
+                  <value>&quot;Boeing 747 / A320&quot;</value>
+                  <value>&quot;Boeing 747 / A380&quot;</value>
+                  <value>&quot;Boeing 747 &amp; A319&quot;</value>
+                  <value>&quot;Boeing 747 400&quot;</value>
+                  <value>&quot;Boeing 747 and Boeing 777&quot;</value>
+                  <value>&quot;Boeing 747-400 / 777&quot;</value>
+                  <value>&quot;Boeing 747-400 / 777-200&quot;</value>
+                  <value>&quot;Boeing 747-400 / A319&quot;</value>
+                  <value>&quot;Boeing 747-400 / A320&quot;</value>
+                  <value>&quot;Boeing 747-400 / A380&quot;</value>
+                  <value>&quot;Boeing 747-400 /A380&quot;</value>
+                  <value>&quot;Boeing 747-400 &amp; A320/321&quot;</value>
+                  <value>&quot;Boeing 757&quot;</value>
+                  <value>&quot;Boeing 767&quot;</value>
+                  <value>&quot;Boeing 767-300&quot;</value>
+                  <value>&quot;Boeing 767, A319&quot;</value>
+                  <value>&quot;Boeing 777&quot;</value>
+                  <value>&quot;Boeing 777 - 200&quot;</value>
+                  <value>&quot;Boeing 777 -200&quot;</value>
+                  <value>&quot;Boeing 777 / 747&quot;</value>
+                  <value>&quot;Boeing 777 / A320&quot;</value>
+                  <value>&quot;Boeing 777 / A380&quot;</value>
+                  <value>&quot;Boeing 777 200&quot;</value>
+                  <value>&quot;Boeing 777 200/300&quot;</value>
+                  <value>&quot;Boeing 777 and Boeing 787&quot;</value>
+                  <value>&quot;Boeing 777-200 / 747-400&quot;</value>
+                  <value>&quot;Boeing 777-200 / 787-9 / A319/ 320&quot;</value>
+                  <value>&quot;Boeing 777-200 and A319&quot;</value>
+                  <value>&quot;Boeing 777-200 ER&quot;</value>
+                  <value>&quot;Boeing 777-200/300&quot;</value>
+                  <value>&quot;Boeing 777-200ER&quot;</value>
+                  <value>&quot;Boeing 777-236 ER&quot;</value>
+                  <value>&quot;Boeing 777-300&quot;</value>
+                  <value>&quot;Boeing 777-300 / A380&quot;</value>
+                  <value>&quot;Boeing 777-300ER&quot;</value>
+                  <value>&quot;Boeing 777-300ER / A320&quot;</value>
+                  <value>&quot;Boeing 787 / A320&quot;</value>
+                  <value>&quot;Boeing 787 Dreamliner&quot;</value>
+                  <value>&quot;Boeing 787-10&quot;</value>
+                  <value>&quot;Boeing 787-8&quot;</value>
+                  <value>&quot;Boeing 787-8 / 787-9&quot;</value>
+                  <value>&quot;Boeing 787-800&quot;</value>
+                  <value>&quot;Boeing 787-9&quot;</value>
+                  <value>&quot;Boeing 787-9 / 777&quot;</value>
+                  <value>&quot;Boeing 787-9 / A319&quot;</value>
+                  <value>&quot;Boeing 787-9 / A380-800&quot;</value>
+                  <value>&quot;Boeing 787-9, A320-200&quot;</value>
+                  <value>&quot;Boeing 787-9, A380&quot;</value>
+                  <value>&quot;Boeing 787-900&quot;</value>
+                  <value>&quot;Boeing 787(9)&quot;</value>
+                  <value>&quot;Boieng 777-200&quot;</value>
+                  <value>&quot;Dreamliner&quot;</value>
+                  <value>&quot;E-190&quot;</value>
+                  <value>&quot;E170 / A319&quot;</value>
+                  <value>&quot;E190&quot;</value>
+                  <value>&quot;EMB190&quot;</value>
+                  <value>&quot;Embraer&quot;</value>
+                  <value>&quot;Embraer 170&quot;</value>
+                  <value>&quot;Embraer 190&quot;</value>
+                  <value>&quot;Embraer 195&quot;</value>
+                  <value>&quot;Embraer-190&quot;</value>
+                  <value>&quot;SAAB 2000&quot;</value>
+                  <value>&quot;Various&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <column caption='Metric Selected' datatype='integer' name='[Calculation_815151560654557184]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='case[Parameters].[Parameter 1]&#13;&#10;when&apos;overall rating&apos;then[rating]&#13;&#10;when&apos;cabin staff service&apos;then[cabin_staff_service]&#13;&#10;when&apos;Entertainment&apos;then[entertainment]&#13;&#10;when&apos;food&apos;then[food_beverages]&#13;&#10;when&apos;ground service&apos;then[ground_service]&#13;&#10;when&apos;seat comfort&apos;then[seat_comfort]&#13;&#10;when&apos;value&apos;then[value_for_money]&#13;&#10;END' />
+            </column>
+            <column datatype='string' name='[Continent]' role='dimension' type='nominal' />
+            <column caption='ba_reviews.csv' datatype='table' name='[__tableau_internal_object_id__].[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE:qk]' pivot='key' type='quantitative' />
+            <column caption='Aircraft' datatype='string' name='[aircraft]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_815151560654557184]' derivation='Avg' name='[avg:Calculation_815151560654557184:qk]' pivot='key' type='quantitative' />
+            <column caption='Cabin Staff Service' datatype='integer' name='[cabin_staff_service]' role='measure' type='quantitative' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='quantitative' />
+            <column caption='Entertainment' datatype='integer' name='[entertainment]' role='measure' type='quantitative' />
+            <column caption='Food Beverages' datatype='integer' name='[food_beverages]' role='measure' type='quantitative' />
+            <column caption='Ground Service' datatype='integer' name='[ground_service]' role='measure' type='quantitative' />
+            <column-instance column='[Continent]' derivation='None' name='[none:Continent:nk]' pivot='key' type='nominal' />
+            <column-instance column='[seat_type]' derivation='None' name='[none:seat_type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[traveller_type]' derivation='None' name='[none:traveller_type:nk]' pivot='key' type='nominal' />
+            <column caption='Rating' datatype='integer' name='[rating]' role='measure' type='quantitative' />
+            <column caption='Seat Comfort' datatype='integer' name='[seat_comfort]' role='measure' type='quantitative' />
+            <column caption='Seat Type' datatype='string' name='[seat_type]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_815151560654557184]' derivation='Sum' name='[sum:Calculation_815151560654557184:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Month-Trunc' name='[tmn:date:qk]' pivot='key' type='quantitative' />
+            <column caption='Traveller Type' datatype='string' name='[traveller_type]' role='dimension' type='nominal' />
+            <column caption='Value For Money' datatype='integer' name='[value_for_money]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[__tableau_internal_object_id__].[cnt:ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE:qk]' included-values='in-range' />
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Aircraft (group)]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:Calculation_815151560654557184:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Aircraft (group)]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:Continent:nk]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:seat_type:nk]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:traveller_type:nk]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[tmn:date:qk]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[__tableau_internal_object_id__].[cnt:ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:Calculation_815151560654557184:qk]' scope='cols' value='overall rating' />
+            <format attr='title' class='0' field='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[__tableau_internal_object_id__].[cnt:ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE:qk]' scope='cols' value='Number of Reviews' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:Calculation_815151560654557184:qk]' value='n#,##0.0;-#,##0.0' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[__tableau_internal_object_id__].[cnt:ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE:qk]' value='n#,##0.0;-#,##0.0' />
+            <format attr='text-format' field='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:Calculation_815151560654557184:qk]' value='n#,##0.0;-#,##0.0' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[__tableau_internal_object_id__].[cnt:ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE:qk]' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#f0e0e5</color>
+                <color>#efd0d9</color>
+                <color>#eec0ce</color>
+                <color>#edb0c2</color>
+                <color>#eca0b7</color>
+                <color>#eb91ac</color>
+                <color>#ea81a0</color>
+                <color>#e97295</color>
+                <color>#e8638a</color>
+                <color>#e75480</color>
+              </color-palette>
+            </encoding>
+            <encoding attr='color' field='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[sum:Calculation_815151560654557184:qk]' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#c8ddd5</color>
+                <color>#a3cabc</color>
+                <color>#81b7a3</color>
+                <color>#64a48c</color>
+                <color>#4a9177</color>
+                <color>#347e63</color>
+                <color>#216b50</color>
+                <color>#13583e</color>
+                <color>#08452e</color>
+                <color>#013220</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='stroke-size' scope='cols' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:Calculation_815151560654557184:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[sum:Calculation_815151560654557184:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#24693d' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[__tableau_internal_object_id__].[cnt:ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[__tableau_internal_object_id__].[cnt:ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#e75480' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Aircraft (group)]</rows>
+        <cols>([federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:Calculation_815151560654557184:qk] + [federated.1bshm6q0p037g21ejcugi0g4hg3r].[__tableau_internal_object_id__].[cnt:ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE:qk])</cols>
+      </table>
+      <simple-id uuid='{269F2764-EAAD-4799-AA87-27519A7A46C2}' />
+    </worksheet>
+    <worksheet name='Map'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Average&lt;</run>
+            <run>[Parameters].[Parameter 1]</run>
+            <run>&gt;By country</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ba_reviews+' name='federated.1bshm6q0p037g21ejcugi0g4hg3r' />
+            <datasource name='Parameters' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Pick a metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;overall rating&quot;'>
+              <calculation class='tableau' formula='&quot;overall rating&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1bshm6q0p037g21ejcugi0g4hg3r'>
+            <column datatype='string' name='[Aircraft (group)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[aircraft]' new-bin='true'>
+                <bin default-name='false' value='&quot;various&quot;'>
+                  <value>&quot;777&quot;</value>
+                  <value>&quot;777-300 and A320&quot;</value>
+                  <value>&quot;787&quot;</value>
+                  <value>&quot;A19&quot;</value>
+                  <value>&quot;A219&quot;</value>
+                  <value>&quot;A230&quot;</value>
+                  <value>&quot;A318&quot;</value>
+                  <value>&quot;A319 / A380 / Boeing 737&quot;</value>
+                  <value>&quot;A319 / Boeing 747&quot;</value>
+                  <value>&quot;A319 / Boeing 747-400&quot;</value>
+                  <value>&quot;A319 / Boeing 777&quot;</value>
+                  <value>&quot;A319 / Boeing 787-8&quot;</value>
+                  <value>&quot;A319 / Boeing 787-9&quot;</value>
+                  <value>&quot;A319 / Boeing 789&quot;</value>
+                  <value>&quot;A319 / Boeing777&quot;</value>
+                  <value>&quot;A319/320&quot;</value>
+                  <value>&quot;A319/A320&quot;</value>
+                  <value>&quot;A320 / Boeing 747-400&quot;</value>
+                  <value>&quot;A320 / Boeing 767&quot;</value>
+                  <value>&quot;A320 / Boeing 777&quot;</value>
+                  <value>&quot;A320 / Boeing 777-200&quot;</value>
+                  <value>&quot;A320 / Boeing 787&quot;</value>
+                  <value>&quot;A320 / Boeing 787-9&quot;</value>
+                  <value>&quot;A320 A350&quot;</value>
+                  <value>&quot;A320 Finnair&quot;</value>
+                  <value>&quot;A320 neo&quot;</value>
+                  <value>&quot;A320 Neo&quot;</value>
+                  <value>&quot;A320-200&quot;</value>
+                  <value>&quot;A320-233&quot;</value>
+                  <value>&quot;A320, A380&quot;</value>
+                  <value>&quot;A320, Boeing 787&quot;</value>
+                  <value>&quot;A320/319&quot;</value>
+                  <value>&quot;A320/A319&quot;</value>
+                  <value>&quot;A320/B788&quot;</value>
+                  <value>&quot;A320neo&quot;</value>
+                  <value>&quot;A320Neo&quot;</value>
+                  <value>&quot;A320NEO&quot;</value>
+                  <value>&quot;A321 / Boeing 747-400&quot;</value>
+                  <value>&quot;A321 / Boeing 777&quot;</value>
+                  <value>&quot;A321 / Boeing 777-300&quot;</value>
+                  <value>&quot;A321 / Boeing 787-9&quot;</value>
+                  <value>&quot;A321 neo&quot;</value>
+                  <value>&quot;A321 Neo&quot;</value>
+                  <value>&quot;A321-200&quot;</value>
+                  <value>&quot;A321-neo&quot;</value>
+                  <value>&quot;A321neo&quot;</value>
+                  <value>&quot;A321Neo&quot;</value>
+                  <value>&quot;A321NEO&quot;</value>
+                  <value>&quot;A322&quot;</value>
+                  <value>&quot;A330&quot;</value>
+                  <value>&quot;A340-300&quot;</value>
+                  <value>&quot;A340-300, A320&quot;</value>
+                  <value>&quot;A350&quot;</value>
+                  <value>&quot;A350-1000&quot;</value>
+                  <value>&quot;A380 / A319&quot;</value>
+                  <value>&quot;A380 / A320&quot;</value>
+                  <value>&quot;A380 / Boeing 747-400&quot;</value>
+                  <value>&quot;A380 / Boeing 777&quot;</value>
+                  <value>&quot;A380 and 747&quot;</value>
+                  <value>&quot;A380 and Boeing 747&quot;</value>
+                  <value>&quot;A380 and Boeing 767&quot;</value>
+                  <value>&quot;A380 and Boeing 777&quot;</value>
+                  <value>&quot;A380-800&quot;</value>
+                  <value>&quot;A380/A320&quot;</value>
+                  <value>&quot;Airbus A32&quot;</value>
+                  <value>&quot;Airbus A320&quot;</value>
+                  <value>&quot;B737-400 / A380 / A319&quot;</value>
+                  <value>&quot;B747-400&quot;</value>
+                  <value>&quot;B747-400 in retro&quot;</value>
+                  <value>&quot;B777&quot;</value>
+                  <value>&quot;B777-200&quot;</value>
+                  <value>&quot;B777-300ER / A320 / A380&quot;</value>
+                  <value>&quot;Boeing 737&quot;</value>
+                  <value>&quot;Boeing 737 800&quot;</value>
+                  <value>&quot;Boeing 737-800&quot;</value>
+                  <value>&quot;Boeing 744&quot;</value>
+                  <value>&quot;Boeing 747 / 777&quot;</value>
+                  <value>&quot;Boeing 747 / A320&quot;</value>
+                  <value>&quot;Boeing 747 / A380&quot;</value>
+                  <value>&quot;Boeing 747 &amp; A319&quot;</value>
+                  <value>&quot;Boeing 747 400&quot;</value>
+                  <value>&quot;Boeing 747 and Boeing 777&quot;</value>
+                  <value>&quot;Boeing 747-400 / 777&quot;</value>
+                  <value>&quot;Boeing 747-400 / 777-200&quot;</value>
+                  <value>&quot;Boeing 747-400 / A319&quot;</value>
+                  <value>&quot;Boeing 747-400 / A320&quot;</value>
+                  <value>&quot;Boeing 747-400 / A380&quot;</value>
+                  <value>&quot;Boeing 747-400 /A380&quot;</value>
+                  <value>&quot;Boeing 747-400 &amp; A320/321&quot;</value>
+                  <value>&quot;Boeing 757&quot;</value>
+                  <value>&quot;Boeing 767&quot;</value>
+                  <value>&quot;Boeing 767-300&quot;</value>
+                  <value>&quot;Boeing 767, A319&quot;</value>
+                  <value>&quot;Boeing 777&quot;</value>
+                  <value>&quot;Boeing 777 - 200&quot;</value>
+                  <value>&quot;Boeing 777 -200&quot;</value>
+                  <value>&quot;Boeing 777 / 747&quot;</value>
+                  <value>&quot;Boeing 777 / A320&quot;</value>
+                  <value>&quot;Boeing 777 / A380&quot;</value>
+                  <value>&quot;Boeing 777 200&quot;</value>
+                  <value>&quot;Boeing 777 200/300&quot;</value>
+                  <value>&quot;Boeing 777 and Boeing 787&quot;</value>
+                  <value>&quot;Boeing 777-200 / 747-400&quot;</value>
+                  <value>&quot;Boeing 777-200 / 787-9 / A319/ 320&quot;</value>
+                  <value>&quot;Boeing 777-200 and A319&quot;</value>
+                  <value>&quot;Boeing 777-200 ER&quot;</value>
+                  <value>&quot;Boeing 777-200/300&quot;</value>
+                  <value>&quot;Boeing 777-200ER&quot;</value>
+                  <value>&quot;Boeing 777-236 ER&quot;</value>
+                  <value>&quot;Boeing 777-300&quot;</value>
+                  <value>&quot;Boeing 777-300 / A380&quot;</value>
+                  <value>&quot;Boeing 777-300ER&quot;</value>
+                  <value>&quot;Boeing 777-300ER / A320&quot;</value>
+                  <value>&quot;Boeing 787 / A320&quot;</value>
+                  <value>&quot;Boeing 787 Dreamliner&quot;</value>
+                  <value>&quot;Boeing 787-10&quot;</value>
+                  <value>&quot;Boeing 787-8&quot;</value>
+                  <value>&quot;Boeing 787-8 / 787-9&quot;</value>
+                  <value>&quot;Boeing 787-800&quot;</value>
+                  <value>&quot;Boeing 787-9&quot;</value>
+                  <value>&quot;Boeing 787-9 / 777&quot;</value>
+                  <value>&quot;Boeing 787-9 / A319&quot;</value>
+                  <value>&quot;Boeing 787-9 / A380-800&quot;</value>
+                  <value>&quot;Boeing 787-9, A320-200&quot;</value>
+                  <value>&quot;Boeing 787-9, A380&quot;</value>
+                  <value>&quot;Boeing 787-900&quot;</value>
+                  <value>&quot;Boeing 787(9)&quot;</value>
+                  <value>&quot;Boieng 777-200&quot;</value>
+                  <value>&quot;Dreamliner&quot;</value>
+                  <value>&quot;E-190&quot;</value>
+                  <value>&quot;E170 / A319&quot;</value>
+                  <value>&quot;E190&quot;</value>
+                  <value>&quot;EMB190&quot;</value>
+                  <value>&quot;Embraer&quot;</value>
+                  <value>&quot;Embraer 170&quot;</value>
+                  <value>&quot;Embraer 190&quot;</value>
+                  <value>&quot;Embraer 195&quot;</value>
+                  <value>&quot;Embraer-190&quot;</value>
+                  <value>&quot;SAAB 2000&quot;</value>
+                  <value>&quot;Various&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <column caption='Metric Selected' datatype='integer' name='[Calculation_815151560654557184]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='case[Parameters].[Parameter 1]&#13;&#10;when&apos;overall rating&apos;then[rating]&#13;&#10;when&apos;cabin staff service&apos;then[cabin_staff_service]&#13;&#10;when&apos;Entertainment&apos;then[entertainment]&#13;&#10;when&apos;food&apos;then[food_beverages]&#13;&#10;when&apos;ground service&apos;then[ground_service]&#13;&#10;when&apos;seat comfort&apos;then[seat_comfort]&#13;&#10;when&apos;value&apos;then[value_for_money]&#13;&#10;END' />
+            </column>
+            <column datatype='string' name='[Continent]' role='dimension' type='nominal' />
+            <column caption='ba_reviews.csv' datatype='table' name='[__tableau_internal_object_id__].[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE:qk]' pivot='key' type='quantitative' />
+            <column caption='Aircraft' datatype='string' name='[aircraft]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_815151560654557184]' derivation='Avg' name='[avg:Calculation_815151560654557184:qk]' pivot='key' type='quantitative' />
+            <column caption='Cabin Staff Service' datatype='integer' name='[cabin_staff_service]' role='measure' type='quantitative' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='quantitative' />
+            <column caption='Entertainment' datatype='integer' name='[entertainment]' role='measure' type='quantitative' />
+            <column caption='Food Beverages' datatype='integer' name='[food_beverages]' role='measure' type='quantitative' />
+            <column caption='Ground Service' datatype='integer' name='[ground_service]' role='measure' type='quantitative' />
+            <column-instance column='[Continent]' derivation='None' name='[none:Continent:nk]' pivot='key' type='nominal' />
+            <column-instance column='[place]' derivation='None' name='[none:place:nk]' pivot='key' type='nominal' />
+            <column-instance column='[seat_type]' derivation='None' name='[none:seat_type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[traveller_type]' derivation='None' name='[none:traveller_type:nk]' pivot='key' type='nominal' />
+            <column caption='Place' datatype='string' name='[place]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+            <column caption='Rating' datatype='integer' name='[rating]' role='measure' type='quantitative' />
+            <column caption='Seat Comfort' datatype='integer' name='[seat_comfort]' role='measure' type='quantitative' />
+            <column caption='Seat Type' datatype='string' name='[seat_type]' role='dimension' type='nominal' />
+            <column-instance column='[date]' derivation='Month-Trunc' name='[tmn:date:qk]' pivot='key' type='quantitative' />
+            <column caption='Traveller Type' datatype='string' name='[traveller_type]' role='dimension' type='nominal' />
+            <column caption='Value For Money' datatype='integer' name='[value_for_money]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[tmn:date:qk]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:seat_type:nk]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:traveller_type:nk]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Aircraft (group)]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:Continent:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Longitude (generated)]' field-type='quantitative' max='24183650.324901719' min='-12212603.843547292' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Latitude (generated)]' field-type='quantitative' max='10008905.708475079' min='-6897741.5360854371' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:Calculation_815151560654557184:qk]' value='n#,##0;-#,##0' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:Calculation_815151560654557184:qk]' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#d4e3d9</color>
+                <color>#b9d5c3</color>
+                <color>#a0c8af</color>
+                <color>#89ba9b</color>
+                <color>#74ad88</color>
+                <color>#609f77</color>
+                <color>#4e9167</color>
+                <color>#3e8457</color>
+                <color>#307649</color>
+                <color>#24693d</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+            <format attr='enabled' id='Coastline' value='true' />
+            <format attr='enabled' id='admin-1-label-9th-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-8th-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-7th-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-6th-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-5th-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-4th-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-3rd-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-2nd-tier' value='false' />
+            <format attr='enabled' id='admin-1-label-1st-tier' value='false' />
+            <format attr='enabled' id='us-admin-1-label-abbr-3rd-tier' value='false' />
+            <format attr='enabled' id='us-admin-1-label-abbr-2nd-tier' value='false' />
+            <format attr='enabled' id='us-admin-1-label-abbr-1st-tier' value='false' />
+            <format attr='enabled' id='admin-0-boundaries-bg-sub' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-supress-bg' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-sm-parents-bg' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-md-parents-bg' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-lg-parents-bg' value='false' />
+            <format attr='enabled' id='admin-0-boundaries-dispute-sub' value='false' />
+            <format attr='enabled' id='admin-0-boundaries-sub' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-supress' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-sm-parents' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-md-parents' value='false' />
+            <format attr='enabled' id='admin-1-boundaries-lg-parents' value='false' />
+            <format attr='enabled' id='admin1-water-lines-usa-tableau' value='false' />
+            <format attr='enabled' id='9-dash-line-casing' value='false' />
+            <format attr='enabled' id='9-dash-line' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.5' />
+            <format attr='map-style' value='normal' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-blue-green-light' />
+            <format attr='geo-area-type' value='State' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-disallow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:Calculation_815151560654557184:qk]' />
+              <lod column='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:place:nk]' />
+              <tooltip column='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[__tableau_internal_object_id__].[cnt:ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE:qk]' />
+              <geometry column='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Geometry (generated)]' />
+            </encodings>
+            <customized-tooltip show-buttons='false'>
+              <formatted-text>
+                <run bold='true' fontcolor='#000000'><![CDATA[<[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:place:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#000000'><![CDATA[Average<[Parameters].[Parameter 1]>	<[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:Calculation_815151560654557184:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run bold='true' fontcolor='#000000'><![CDATA[Number of reviews:<[federated.1bshm6q0p037g21ejcugi0g4hg3r].[__tableau_internal_object_id__].[cnt:ba_reviews.csv_7CB0302AA6B24DF688E46F8FE4EEC7CE:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Latitude (generated)]</rows>
+        <cols>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{966D6C14-0DC6-4A6E-B25B-B0890B138E29}' />
+    </worksheet>
+    <worksheet name='Month'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1'>Average&lt;</run>
+            <run bold='true' fontalignment='1'>[Parameters].[Parameter 1]</run>
+            <run bold='true' fontalignment='1'>&gt;By month</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ba_reviews+' name='federated.1bshm6q0p037g21ejcugi0g4hg3r' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Pick a metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;overall rating&quot;'>
+              <calculation class='tableau' formula='&quot;overall rating&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.1bshm6q0p037g21ejcugi0g4hg3r'>
+            <column datatype='string' name='[Aircraft (group)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[aircraft]' new-bin='true'>
+                <bin default-name='false' value='&quot;various&quot;'>
+                  <value>&quot;777&quot;</value>
+                  <value>&quot;777-300 and A320&quot;</value>
+                  <value>&quot;787&quot;</value>
+                  <value>&quot;A19&quot;</value>
+                  <value>&quot;A219&quot;</value>
+                  <value>&quot;A230&quot;</value>
+                  <value>&quot;A318&quot;</value>
+                  <value>&quot;A319 / A380 / Boeing 737&quot;</value>
+                  <value>&quot;A319 / Boeing 747&quot;</value>
+                  <value>&quot;A319 / Boeing 747-400&quot;</value>
+                  <value>&quot;A319 / Boeing 777&quot;</value>
+                  <value>&quot;A319 / Boeing 787-8&quot;</value>
+                  <value>&quot;A319 / Boeing 787-9&quot;</value>
+                  <value>&quot;A319 / Boeing 789&quot;</value>
+                  <value>&quot;A319 / Boeing777&quot;</value>
+                  <value>&quot;A319/320&quot;</value>
+                  <value>&quot;A319/A320&quot;</value>
+                  <value>&quot;A320 / Boeing 747-400&quot;</value>
+                  <value>&quot;A320 / Boeing 767&quot;</value>
+                  <value>&quot;A320 / Boeing 777&quot;</value>
+                  <value>&quot;A320 / Boeing 777-200&quot;</value>
+                  <value>&quot;A320 / Boeing 787&quot;</value>
+                  <value>&quot;A320 / Boeing 787-9&quot;</value>
+                  <value>&quot;A320 A350&quot;</value>
+                  <value>&quot;A320 Finnair&quot;</value>
+                  <value>&quot;A320 neo&quot;</value>
+                  <value>&quot;A320 Neo&quot;</value>
+                  <value>&quot;A320-200&quot;</value>
+                  <value>&quot;A320-233&quot;</value>
+                  <value>&quot;A320, A380&quot;</value>
+                  <value>&quot;A320, Boeing 787&quot;</value>
+                  <value>&quot;A320/319&quot;</value>
+                  <value>&quot;A320/A319&quot;</value>
+                  <value>&quot;A320/B788&quot;</value>
+                  <value>&quot;A320neo&quot;</value>
+                  <value>&quot;A320Neo&quot;</value>
+                  <value>&quot;A320NEO&quot;</value>
+                  <value>&quot;A321 / Boeing 747-400&quot;</value>
+                  <value>&quot;A321 / Boeing 777&quot;</value>
+                  <value>&quot;A321 / Boeing 777-300&quot;</value>
+                  <value>&quot;A321 / Boeing 787-9&quot;</value>
+                  <value>&quot;A321 neo&quot;</value>
+                  <value>&quot;A321 Neo&quot;</value>
+                  <value>&quot;A321-200&quot;</value>
+                  <value>&quot;A321-neo&quot;</value>
+                  <value>&quot;A321neo&quot;</value>
+                  <value>&quot;A321Neo&quot;</value>
+                  <value>&quot;A321NEO&quot;</value>
+                  <value>&quot;A322&quot;</value>
+                  <value>&quot;A330&quot;</value>
+                  <value>&quot;A340-300&quot;</value>
+                  <value>&quot;A340-300, A320&quot;</value>
+                  <value>&quot;A350&quot;</value>
+                  <value>&quot;A350-1000&quot;</value>
+                  <value>&quot;A380 / A319&quot;</value>
+                  <value>&quot;A380 / A320&quot;</value>
+                  <value>&quot;A380 / Boeing 747-400&quot;</value>
+                  <value>&quot;A380 / Boeing 777&quot;</value>
+                  <value>&quot;A380 and 747&quot;</value>
+                  <value>&quot;A380 and Boeing 747&quot;</value>
+                  <value>&quot;A380 and Boeing 767&quot;</value>
+                  <value>&quot;A380 and Boeing 777&quot;</value>
+                  <value>&quot;A380-800&quot;</value>
+                  <value>&quot;A380/A320&quot;</value>
+                  <value>&quot;Airbus A32&quot;</value>
+                  <value>&quot;Airbus A320&quot;</value>
+                  <value>&quot;B737-400 / A380 / A319&quot;</value>
+                  <value>&quot;B747-400&quot;</value>
+                  <value>&quot;B747-400 in retro&quot;</value>
+                  <value>&quot;B777&quot;</value>
+                  <value>&quot;B777-200&quot;</value>
+                  <value>&quot;B777-300ER / A320 / A380&quot;</value>
+                  <value>&quot;Boeing 737&quot;</value>
+                  <value>&quot;Boeing 737 800&quot;</value>
+                  <value>&quot;Boeing 737-800&quot;</value>
+                  <value>&quot;Boeing 744&quot;</value>
+                  <value>&quot;Boeing 747 / 777&quot;</value>
+                  <value>&quot;Boeing 747 / A320&quot;</value>
+                  <value>&quot;Boeing 747 / A380&quot;</value>
+                  <value>&quot;Boeing 747 &amp; A319&quot;</value>
+                  <value>&quot;Boeing 747 400&quot;</value>
+                  <value>&quot;Boeing 747 and Boeing 777&quot;</value>
+                  <value>&quot;Boeing 747-400 / 777&quot;</value>
+                  <value>&quot;Boeing 747-400 / 777-200&quot;</value>
+                  <value>&quot;Boeing 747-400 / A319&quot;</value>
+                  <value>&quot;Boeing 747-400 / A320&quot;</value>
+                  <value>&quot;Boeing 747-400 / A380&quot;</value>
+                  <value>&quot;Boeing 747-400 /A380&quot;</value>
+                  <value>&quot;Boeing 747-400 &amp; A320/321&quot;</value>
+                  <value>&quot;Boeing 757&quot;</value>
+                  <value>&quot;Boeing 767&quot;</value>
+                  <value>&quot;Boeing 767-300&quot;</value>
+                  <value>&quot;Boeing 767, A319&quot;</value>
+                  <value>&quot;Boeing 777&quot;</value>
+                  <value>&quot;Boeing 777 - 200&quot;</value>
+                  <value>&quot;Boeing 777 -200&quot;</value>
+                  <value>&quot;Boeing 777 / 747&quot;</value>
+                  <value>&quot;Boeing 777 / A320&quot;</value>
+                  <value>&quot;Boeing 777 / A380&quot;</value>
+                  <value>&quot;Boeing 777 200&quot;</value>
+                  <value>&quot;Boeing 777 200/300&quot;</value>
+                  <value>&quot;Boeing 777 and Boeing 787&quot;</value>
+                  <value>&quot;Boeing 777-200 / 747-400&quot;</value>
+                  <value>&quot;Boeing 777-200 / 787-9 / A319/ 320&quot;</value>
+                  <value>&quot;Boeing 777-200 and A319&quot;</value>
+                  <value>&quot;Boeing 777-200 ER&quot;</value>
+                  <value>&quot;Boeing 777-200/300&quot;</value>
+                  <value>&quot;Boeing 777-200ER&quot;</value>
+                  <value>&quot;Boeing 777-236 ER&quot;</value>
+                  <value>&quot;Boeing 777-300&quot;</value>
+                  <value>&quot;Boeing 777-300 / A380&quot;</value>
+                  <value>&quot;Boeing 777-300ER&quot;</value>
+                  <value>&quot;Boeing 777-300ER / A320&quot;</value>
+                  <value>&quot;Boeing 787 / A320&quot;</value>
+                  <value>&quot;Boeing 787 Dreamliner&quot;</value>
+                  <value>&quot;Boeing 787-10&quot;</value>
+                  <value>&quot;Boeing 787-8&quot;</value>
+                  <value>&quot;Boeing 787-8 / 787-9&quot;</value>
+                  <value>&quot;Boeing 787-800&quot;</value>
+                  <value>&quot;Boeing 787-9&quot;</value>
+                  <value>&quot;Boeing 787-9 / 777&quot;</value>
+                  <value>&quot;Boeing 787-9 / A319&quot;</value>
+                  <value>&quot;Boeing 787-9 / A380-800&quot;</value>
+                  <value>&quot;Boeing 787-9, A320-200&quot;</value>
+                  <value>&quot;Boeing 787-9, A380&quot;</value>
+                  <value>&quot;Boeing 787-900&quot;</value>
+                  <value>&quot;Boeing 787(9)&quot;</value>
+                  <value>&quot;Boieng 777-200&quot;</value>
+                  <value>&quot;Dreamliner&quot;</value>
+                  <value>&quot;E-190&quot;</value>
+                  <value>&quot;E170 / A319&quot;</value>
+                  <value>&quot;E190&quot;</value>
+                  <value>&quot;EMB190&quot;</value>
+                  <value>&quot;Embraer&quot;</value>
+                  <value>&quot;Embraer 170&quot;</value>
+                  <value>&quot;Embraer 190&quot;</value>
+                  <value>&quot;Embraer 195&quot;</value>
+                  <value>&quot;Embraer-190&quot;</value>
+                  <value>&quot;SAAB 2000&quot;</value>
+                  <value>&quot;Various&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <column caption='Metric Selected' datatype='integer' name='[Calculation_815151560654557184]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='case[Parameters].[Parameter 1]&#13;&#10;when&apos;overall rating&apos;then[rating]&#13;&#10;when&apos;cabin staff service&apos;then[cabin_staff_service]&#13;&#10;when&apos;Entertainment&apos;then[entertainment]&#13;&#10;when&apos;food&apos;then[food_beverages]&#13;&#10;when&apos;ground service&apos;then[ground_service]&#13;&#10;when&apos;seat comfort&apos;then[seat_comfort]&#13;&#10;when&apos;value&apos;then[value_for_money]&#13;&#10;END' />
+            </column>
+            <column datatype='string' name='[Continent]' role='dimension' type='nominal' />
+            <column caption='Aircraft' datatype='string' name='[aircraft]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_815151560654557184]' derivation='Avg' name='[avg:Calculation_815151560654557184:qk]' pivot='key' type='quantitative' />
+            <column caption='Cabin Staff Service' datatype='integer' name='[cabin_staff_service]' role='measure' type='quantitative' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='quantitative' />
+            <column caption='Entertainment' datatype='integer' name='[entertainment]' role='measure' type='quantitative' />
+            <column caption='Food Beverages' datatype='integer' name='[food_beverages]' role='measure' type='quantitative' />
+            <column caption='Ground Service' datatype='integer' name='[ground_service]' role='measure' type='quantitative' />
+            <column-instance column='[Continent]' derivation='None' name='[none:Continent:nk]' pivot='key' type='nominal' />
+            <column-instance column='[seat_type]' derivation='None' name='[none:seat_type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[traveller_type]' derivation='None' name='[none:traveller_type:nk]' pivot='key' type='nominal' />
+            <column caption='Rating' datatype='integer' name='[rating]' role='measure' type='quantitative' />
+            <column caption='Seat Comfort' datatype='integer' name='[seat_comfort]' role='measure' type='quantitative' />
+            <column caption='Seat Type' datatype='string' name='[seat_type]' role='dimension' type='nominal' />
+            <column-instance column='[date]' derivation='Month-Trunc' name='[tmn:date:qk]' pivot='key' type='quantitative' />
+            <column caption='Traveller Type' datatype='string' name='[traveller_type]' role='dimension' type='nominal' />
+            <column caption='Value For Money' datatype='integer' name='[value_for_money]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Aircraft (group)]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:Continent:nk]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:seat_type:nk]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:traveller_type:nk]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[tmn:date:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:Calculation_815151560654557184:qk]' scope='rows' value='' />
+            <format attr='title' class='0' field='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[tmn:date:qk]' scope='cols' value='' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='total' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#24693d' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:Calculation_815151560654557184:qk]</rows>
+        <cols>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[tmn:date:qk]</cols>
+      </table>
+      <simple-id uuid='{FF9780E1-E2B7-4BD3-95CA-545328EBA359}' />
+    </worksheet>
+    <worksheet name='Summary'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Summary</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='ba_reviews+' name='federated.1bshm6q0p037g21ejcugi0g4hg3r' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1bshm6q0p037g21ejcugi0g4hg3r'>
+            <column datatype='string' name='[Aircraft (group)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[aircraft]' new-bin='true'>
+                <bin default-name='false' value='&quot;various&quot;'>
+                  <value>&quot;777&quot;</value>
+                  <value>&quot;777-300 and A320&quot;</value>
+                  <value>&quot;787&quot;</value>
+                  <value>&quot;A19&quot;</value>
+                  <value>&quot;A219&quot;</value>
+                  <value>&quot;A230&quot;</value>
+                  <value>&quot;A318&quot;</value>
+                  <value>&quot;A319 / A380 / Boeing 737&quot;</value>
+                  <value>&quot;A319 / Boeing 747&quot;</value>
+                  <value>&quot;A319 / Boeing 747-400&quot;</value>
+                  <value>&quot;A319 / Boeing 777&quot;</value>
+                  <value>&quot;A319 / Boeing 787-8&quot;</value>
+                  <value>&quot;A319 / Boeing 787-9&quot;</value>
+                  <value>&quot;A319 / Boeing 789&quot;</value>
+                  <value>&quot;A319 / Boeing777&quot;</value>
+                  <value>&quot;A319/320&quot;</value>
+                  <value>&quot;A319/A320&quot;</value>
+                  <value>&quot;A320 / Boeing 747-400&quot;</value>
+                  <value>&quot;A320 / Boeing 767&quot;</value>
+                  <value>&quot;A320 / Boeing 777&quot;</value>
+                  <value>&quot;A320 / Boeing 777-200&quot;</value>
+                  <value>&quot;A320 / Boeing 787&quot;</value>
+                  <value>&quot;A320 / Boeing 787-9&quot;</value>
+                  <value>&quot;A320 A350&quot;</value>
+                  <value>&quot;A320 Finnair&quot;</value>
+                  <value>&quot;A320 neo&quot;</value>
+                  <value>&quot;A320 Neo&quot;</value>
+                  <value>&quot;A320-200&quot;</value>
+                  <value>&quot;A320-233&quot;</value>
+                  <value>&quot;A320, A380&quot;</value>
+                  <value>&quot;A320, Boeing 787&quot;</value>
+                  <value>&quot;A320/319&quot;</value>
+                  <value>&quot;A320/A319&quot;</value>
+                  <value>&quot;A320/B788&quot;</value>
+                  <value>&quot;A320neo&quot;</value>
+                  <value>&quot;A320Neo&quot;</value>
+                  <value>&quot;A320NEO&quot;</value>
+                  <value>&quot;A321 / Boeing 747-400&quot;</value>
+                  <value>&quot;A321 / Boeing 777&quot;</value>
+                  <value>&quot;A321 / Boeing 777-300&quot;</value>
+                  <value>&quot;A321 / Boeing 787-9&quot;</value>
+                  <value>&quot;A321 neo&quot;</value>
+                  <value>&quot;A321 Neo&quot;</value>
+                  <value>&quot;A321-200&quot;</value>
+                  <value>&quot;A321-neo&quot;</value>
+                  <value>&quot;A321neo&quot;</value>
+                  <value>&quot;A321Neo&quot;</value>
+                  <value>&quot;A321NEO&quot;</value>
+                  <value>&quot;A322&quot;</value>
+                  <value>&quot;A330&quot;</value>
+                  <value>&quot;A340-300&quot;</value>
+                  <value>&quot;A340-300, A320&quot;</value>
+                  <value>&quot;A350&quot;</value>
+                  <value>&quot;A350-1000&quot;</value>
+                  <value>&quot;A380 / A319&quot;</value>
+                  <value>&quot;A380 / A320&quot;</value>
+                  <value>&quot;A380 / Boeing 747-400&quot;</value>
+                  <value>&quot;A380 / Boeing 777&quot;</value>
+                  <value>&quot;A380 and 747&quot;</value>
+                  <value>&quot;A380 and Boeing 747&quot;</value>
+                  <value>&quot;A380 and Boeing 767&quot;</value>
+                  <value>&quot;A380 and Boeing 777&quot;</value>
+                  <value>&quot;A380-800&quot;</value>
+                  <value>&quot;A380/A320&quot;</value>
+                  <value>&quot;Airbus A32&quot;</value>
+                  <value>&quot;Airbus A320&quot;</value>
+                  <value>&quot;B737-400 / A380 / A319&quot;</value>
+                  <value>&quot;B747-400&quot;</value>
+                  <value>&quot;B747-400 in retro&quot;</value>
+                  <value>&quot;B777&quot;</value>
+                  <value>&quot;B777-200&quot;</value>
+                  <value>&quot;B777-300ER / A320 / A380&quot;</value>
+                  <value>&quot;Boeing 737&quot;</value>
+                  <value>&quot;Boeing 737 800&quot;</value>
+                  <value>&quot;Boeing 737-800&quot;</value>
+                  <value>&quot;Boeing 744&quot;</value>
+                  <value>&quot;Boeing 747 / 777&quot;</value>
+                  <value>&quot;Boeing 747 / A320&quot;</value>
+                  <value>&quot;Boeing 747 / A380&quot;</value>
+                  <value>&quot;Boeing 747 &amp; A319&quot;</value>
+                  <value>&quot;Boeing 747 400&quot;</value>
+                  <value>&quot;Boeing 747 and Boeing 777&quot;</value>
+                  <value>&quot;Boeing 747-400 / 777&quot;</value>
+                  <value>&quot;Boeing 747-400 / 777-200&quot;</value>
+                  <value>&quot;Boeing 747-400 / A319&quot;</value>
+                  <value>&quot;Boeing 747-400 / A320&quot;</value>
+                  <value>&quot;Boeing 747-400 / A380&quot;</value>
+                  <value>&quot;Boeing 747-400 /A380&quot;</value>
+                  <value>&quot;Boeing 747-400 &amp; A320/321&quot;</value>
+                  <value>&quot;Boeing 757&quot;</value>
+                  <value>&quot;Boeing 767&quot;</value>
+                  <value>&quot;Boeing 767-300&quot;</value>
+                  <value>&quot;Boeing 767, A319&quot;</value>
+                  <value>&quot;Boeing 777&quot;</value>
+                  <value>&quot;Boeing 777 - 200&quot;</value>
+                  <value>&quot;Boeing 777 -200&quot;</value>
+                  <value>&quot;Boeing 777 / 747&quot;</value>
+                  <value>&quot;Boeing 777 / A320&quot;</value>
+                  <value>&quot;Boeing 777 / A380&quot;</value>
+                  <value>&quot;Boeing 777 200&quot;</value>
+                  <value>&quot;Boeing 777 200/300&quot;</value>
+                  <value>&quot;Boeing 777 and Boeing 787&quot;</value>
+                  <value>&quot;Boeing 777-200 / 747-400&quot;</value>
+                  <value>&quot;Boeing 777-200 / 787-9 / A319/ 320&quot;</value>
+                  <value>&quot;Boeing 777-200 and A319&quot;</value>
+                  <value>&quot;Boeing 777-200 ER&quot;</value>
+                  <value>&quot;Boeing 777-200/300&quot;</value>
+                  <value>&quot;Boeing 777-200ER&quot;</value>
+                  <value>&quot;Boeing 777-236 ER&quot;</value>
+                  <value>&quot;Boeing 777-300&quot;</value>
+                  <value>&quot;Boeing 777-300 / A380&quot;</value>
+                  <value>&quot;Boeing 777-300ER&quot;</value>
+                  <value>&quot;Boeing 777-300ER / A320&quot;</value>
+                  <value>&quot;Boeing 787 / A320&quot;</value>
+                  <value>&quot;Boeing 787 Dreamliner&quot;</value>
+                  <value>&quot;Boeing 787-10&quot;</value>
+                  <value>&quot;Boeing 787-8&quot;</value>
+                  <value>&quot;Boeing 787-8 / 787-9&quot;</value>
+                  <value>&quot;Boeing 787-800&quot;</value>
+                  <value>&quot;Boeing 787-9&quot;</value>
+                  <value>&quot;Boeing 787-9 / 777&quot;</value>
+                  <value>&quot;Boeing 787-9 / A319&quot;</value>
+                  <value>&quot;Boeing 787-9 / A380-800&quot;</value>
+                  <value>&quot;Boeing 787-9, A320-200&quot;</value>
+                  <value>&quot;Boeing 787-9, A380&quot;</value>
+                  <value>&quot;Boeing 787-900&quot;</value>
+                  <value>&quot;Boeing 787(9)&quot;</value>
+                  <value>&quot;Boieng 777-200&quot;</value>
+                  <value>&quot;Dreamliner&quot;</value>
+                  <value>&quot;E-190&quot;</value>
+                  <value>&quot;E170 / A319&quot;</value>
+                  <value>&quot;E190&quot;</value>
+                  <value>&quot;EMB190&quot;</value>
+                  <value>&quot;Embraer&quot;</value>
+                  <value>&quot;Embraer 170&quot;</value>
+                  <value>&quot;Embraer 190&quot;</value>
+                  <value>&quot;Embraer 195&quot;</value>
+                  <value>&quot;Embraer-190&quot;</value>
+                  <value>&quot;SAAB 2000&quot;</value>
+                  <value>&quot;Various&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <column datatype='string' name='[Continent]' role='dimension' type='nominal' />
+            <column caption='Aircraft' datatype='string' name='[aircraft]' role='dimension' type='nominal' />
+            <column-instance column='[cabin_staff_service]' derivation='Avg' name='[avg:cabin_staff_service:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[entertainment]' derivation='Avg' name='[avg:entertainment:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[food_beverages]' derivation='Avg' name='[avg:food_beverages:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[ground_service]' derivation='Avg' name='[avg:ground_service:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[rating]' derivation='Avg' name='[avg:rating:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[seat_comfort]' derivation='Avg' name='[avg:seat_comfort:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[value_for_money]' derivation='Avg' name='[avg:value_for_money:qk]' pivot='key' type='quantitative' />
+            <column caption='Cabin Staff Service' datatype='integer' name='[cabin_staff_service]' role='measure' type='quantitative' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='quantitative' />
+            <column caption='Entertainment' datatype='integer' name='[entertainment]' role='measure' type='quantitative' />
+            <column caption='Food Beverages' datatype='integer' name='[food_beverages]' role='measure' type='quantitative' />
+            <column caption='Ground Service' datatype='integer' name='[ground_service]' role='measure' type='quantitative' />
+            <column-instance column='[Continent]' derivation='None' name='[none:Continent:nk]' pivot='key' type='nominal' />
+            <column-instance column='[seat_type]' derivation='None' name='[none:seat_type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[traveller_type]' derivation='None' name='[none:traveller_type:nk]' pivot='key' type='nominal' />
+            <column caption='Rating' datatype='integer' name='[rating]' role='measure' type='quantitative' />
+            <column caption='Seat Comfort' datatype='integer' name='[seat_comfort]' role='measure' type='quantitative' />
+            <column caption='Seat Type' datatype='string' name='[seat_type]' role='dimension' type='nominal' />
+            <column-instance column='[value_for_money]' derivation='Sum' name='[sum:value_for_money:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Month-Trunc' name='[tmn:date:qk]' pivot='key' type='quantitative' />
+            <column caption='Traveller Type' datatype='string' name='[traveller_type]' role='dimension' type='nominal' />
+            <column caption='Value For Money' datatype='integer' name='[value_for_money]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:rating:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:cabin_staff_service:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:entertainment:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:food_beverages:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:ground_service:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:seat_comfort:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:value_for_money:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:rating:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:cabin_staff_service:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:entertainment:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:food_beverages:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:ground_service:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:seat_comfort:qk]&quot;</bucket>
+              <bucket>&quot;[federated.1bshm6q0p037g21ejcugi0g4hg3r].[sum:value_for_money:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Aircraft (group)]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:Continent:nk]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:seat_type:nk]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:traveller_type:nk]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[tmn:date:qk]</column>
+            <column>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[:Measure Names]' value='168' />
+            <format attr='text-format' field='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Multiple Values]' value='n#,##0.0;-#,##0.0' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width-header' value='10' />
+            <format attr='border-width' data-class='subtotal' value='0' />
+            <format attr='border-style' data-class='subtotal' value='none' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='subtotal' value='0' />
+            <format attr='border-style' data-class='subtotal' value='none' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#24693d' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='color' value='#ffffff' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Multiple Values]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run bold='true' fontsize='20'><![CDATA[<[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Multiple Values]>]]></run>
+                <run>Æ&#10;</run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.1bshm6q0p037g21ejcugi0g4hg3r].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{1726615C-D343-4CB8-9FED-DBB9966C0C24}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='700' maxwidth='1200' minheight='700' minwidth='1200' sizing-mode='fixed' />
+      <datasources>
+        <datasource name='Parameters' />
+        <datasource caption='ba_reviews+' name='federated.1bshm6q0p037g21ejcugi0g4hg3r' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Pick a metric' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;overall rating&quot;'>
+          <calculation class='tableau' formula='&quot;overall rating&quot;' />
+          <members>
+            <member value='&quot;overall rating&quot;' />
+            <member value='&quot;cabin staff service &quot;' />
+            <member value='&quot;Entertainment&quot;' />
+            <member value='&quot;Food&quot;' />
+            <member value='&quot;Ground service&quot;' />
+            <member value='&quot;Seat Comfort&quot;' />
+            <member value='&quot;value&quot;' />
+          </members>
+        </column>
+      </datasource-dependencies>
+      <datasource-dependencies datasource='federated.1bshm6q0p037g21ejcugi0g4hg3r'>
+        <column datatype='string' name='[Aircraft (group)]' role='dimension' type='nominal'>
+          <calculation class='categorical-bin' column='[aircraft]' new-bin='true'>
+            <bin default-name='false' value='&quot;various&quot;'>
+              <value>&quot;777&quot;</value>
+              <value>&quot;777-300 and A320&quot;</value>
+              <value>&quot;787&quot;</value>
+              <value>&quot;A19&quot;</value>
+              <value>&quot;A219&quot;</value>
+              <value>&quot;A230&quot;</value>
+              <value>&quot;A318&quot;</value>
+              <value>&quot;A319 / A380 / Boeing 737&quot;</value>
+              <value>&quot;A319 / Boeing 747&quot;</value>
+              <value>&quot;A319 / Boeing 747-400&quot;</value>
+              <value>&quot;A319 / Boeing 777&quot;</value>
+              <value>&quot;A319 / Boeing 787-8&quot;</value>
+              <value>&quot;A319 / Boeing 787-9&quot;</value>
+              <value>&quot;A319 / Boeing 789&quot;</value>
+              <value>&quot;A319 / Boeing777&quot;</value>
+              <value>&quot;A319/320&quot;</value>
+              <value>&quot;A319/A320&quot;</value>
+              <value>&quot;A320 / Boeing 747-400&quot;</value>
+              <value>&quot;A320 / Boeing 767&quot;</value>
+              <value>&quot;A320 / Boeing 777&quot;</value>
+              <value>&quot;A320 / Boeing 777-200&quot;</value>
+              <value>&quot;A320 / Boeing 787&quot;</value>
+              <value>&quot;A320 / Boeing 787-9&quot;</value>
+              <value>&quot;A320 A350&quot;</value>
+              <value>&quot;A320 Finnair&quot;</value>
+              <value>&quot;A320 neo&quot;</value>
+              <value>&quot;A320 Neo&quot;</value>
+              <value>&quot;A320-200&quot;</value>
+              <value>&quot;A320-233&quot;</value>
+              <value>&quot;A320, A380&quot;</value>
+              <value>&quot;A320, Boeing 787&quot;</value>
+              <value>&quot;A320/319&quot;</value>
+              <value>&quot;A320/A319&quot;</value>
+              <value>&quot;A320/B788&quot;</value>
+              <value>&quot;A320neo&quot;</value>
+              <value>&quot;A320Neo&quot;</value>
+              <value>&quot;A320NEO&quot;</value>
+              <value>&quot;A321 / Boeing 747-400&quot;</value>
+              <value>&quot;A321 / Boeing 777&quot;</value>
+              <value>&quot;A321 / Boeing 777-300&quot;</value>
+              <value>&quot;A321 / Boeing 787-9&quot;</value>
+              <value>&quot;A321 neo&quot;</value>
+              <value>&quot;A321 Neo&quot;</value>
+              <value>&quot;A321-200&quot;</value>
+              <value>&quot;A321-neo&quot;</value>
+              <value>&quot;A321neo&quot;</value>
+              <value>&quot;A321Neo&quot;</value>
+              <value>&quot;A321NEO&quot;</value>
+              <value>&quot;A322&quot;</value>
+              <value>&quot;A330&quot;</value>
+              <value>&quot;A340-300&quot;</value>
+              <value>&quot;A340-300, A320&quot;</value>
+              <value>&quot;A350&quot;</value>
+              <value>&quot;A350-1000&quot;</value>
+              <value>&quot;A380 / A319&quot;</value>
+              <value>&quot;A380 / A320&quot;</value>
+              <value>&quot;A380 / Boeing 747-400&quot;</value>
+              <value>&quot;A380 / Boeing 777&quot;</value>
+              <value>&quot;A380 and 747&quot;</value>
+              <value>&quot;A380 and Boeing 747&quot;</value>
+              <value>&quot;A380 and Boeing 767&quot;</value>
+              <value>&quot;A380 and Boeing 777&quot;</value>
+              <value>&quot;A380-800&quot;</value>
+              <value>&quot;A380/A320&quot;</value>
+              <value>&quot;Airbus A32&quot;</value>
+              <value>&quot;Airbus A320&quot;</value>
+              <value>&quot;B737-400 / A380 / A319&quot;</value>
+              <value>&quot;B747-400&quot;</value>
+              <value>&quot;B747-400 in retro&quot;</value>
+              <value>&quot;B777&quot;</value>
+              <value>&quot;B777-200&quot;</value>
+              <value>&quot;B777-300ER / A320 / A380&quot;</value>
+              <value>&quot;Boeing 737&quot;</value>
+              <value>&quot;Boeing 737 800&quot;</value>
+              <value>&quot;Boeing 737-800&quot;</value>
+              <value>&quot;Boeing 744&quot;</value>
+              <value>&quot;Boeing 747 / 777&quot;</value>
+              <value>&quot;Boeing 747 / A320&quot;</value>
+              <value>&quot;Boeing 747 / A380&quot;</value>
+              <value>&quot;Boeing 747 &amp; A319&quot;</value>
+              <value>&quot;Boeing 747 400&quot;</value>
+              <value>&quot;Boeing 747 and Boeing 777&quot;</value>
+              <value>&quot;Boeing 747-400 / 777&quot;</value>
+              <value>&quot;Boeing 747-400 / 777-200&quot;</value>
+              <value>&quot;Boeing 747-400 / A319&quot;</value>
+              <value>&quot;Boeing 747-400 / A320&quot;</value>
+              <value>&quot;Boeing 747-400 / A380&quot;</value>
+              <value>&quot;Boeing 747-400 /A380&quot;</value>
+              <value>&quot;Boeing 747-400 &amp; A320/321&quot;</value>
+              <value>&quot;Boeing 757&quot;</value>
+              <value>&quot;Boeing 767&quot;</value>
+              <value>&quot;Boeing 767-300&quot;</value>
+              <value>&quot;Boeing 767, A319&quot;</value>
+              <value>&quot;Boeing 777&quot;</value>
+              <value>&quot;Boeing 777 - 200&quot;</value>
+              <value>&quot;Boeing 777 -200&quot;</value>
+              <value>&quot;Boeing 777 / 747&quot;</value>
+              <value>&quot;Boeing 777 / A320&quot;</value>
+              <value>&quot;Boeing 777 / A380&quot;</value>
+              <value>&quot;Boeing 777 200&quot;</value>
+              <value>&quot;Boeing 777 200/300&quot;</value>
+              <value>&quot;Boeing 777 and Boeing 787&quot;</value>
+              <value>&quot;Boeing 777-200 / 747-400&quot;</value>
+              <value>&quot;Boeing 777-200 / 787-9 / A319/ 320&quot;</value>
+              <value>&quot;Boeing 777-200 and A319&quot;</value>
+              <value>&quot;Boeing 777-200 ER&quot;</value>
+              <value>&quot;Boeing 777-200/300&quot;</value>
+              <value>&quot;Boeing 777-200ER&quot;</value>
+              <value>&quot;Boeing 777-236 ER&quot;</value>
+              <value>&quot;Boeing 777-300&quot;</value>
+              <value>&quot;Boeing 777-300 / A380&quot;</value>
+              <value>&quot;Boeing 777-300ER&quot;</value>
+              <value>&quot;Boeing 777-300ER / A320&quot;</value>
+              <value>&quot;Boeing 787 / A320&quot;</value>
+              <value>&quot;Boeing 787 Dreamliner&quot;</value>
+              <value>&quot;Boeing 787-10&quot;</value>
+              <value>&quot;Boeing 787-8&quot;</value>
+              <value>&quot;Boeing 787-8 / 787-9&quot;</value>
+              <value>&quot;Boeing 787-800&quot;</value>
+              <value>&quot;Boeing 787-9&quot;</value>
+              <value>&quot;Boeing 787-9 / 777&quot;</value>
+              <value>&quot;Boeing 787-9 / A319&quot;</value>
+              <value>&quot;Boeing 787-9 / A380-800&quot;</value>
+              <value>&quot;Boeing 787-9, A320-200&quot;</value>
+              <value>&quot;Boeing 787-9, A380&quot;</value>
+              <value>&quot;Boeing 787-900&quot;</value>
+              <value>&quot;Boeing 787(9)&quot;</value>
+              <value>&quot;Boieng 777-200&quot;</value>
+              <value>&quot;Dreamliner&quot;</value>
+              <value>&quot;E-190&quot;</value>
+              <value>&quot;E170 / A319&quot;</value>
+              <value>&quot;E190&quot;</value>
+              <value>&quot;EMB190&quot;</value>
+              <value>&quot;Embraer&quot;</value>
+              <value>&quot;Embraer 170&quot;</value>
+              <value>&quot;Embraer 190&quot;</value>
+              <value>&quot;Embraer 195&quot;</value>
+              <value>&quot;Embraer-190&quot;</value>
+              <value>&quot;SAAB 2000&quot;</value>
+              <value>&quot;Various&quot;</value>
+            </bin>
+          </calculation>
+        </column>
+        <column datatype='string' name='[Continent]' role='dimension' type='nominal' />
+        <column caption='Aircraft' datatype='string' name='[aircraft]' role='dimension' type='nominal' />
+        <column caption='Date' datatype='date' name='[date]' role='dimension' type='quantitative' />
+        <column-instance column='[Continent]' derivation='None' name='[none:Continent:nk]' pivot='key' type='nominal' />
+        <column-instance column='[seat_type]' derivation='None' name='[none:seat_type:nk]' pivot='key' type='nominal' />
+        <column-instance column='[traveller_type]' derivation='None' name='[none:traveller_type:nk]' pivot='key' type='nominal' />
+        <column caption='Seat Type' datatype='string' name='[seat_type]' role='dimension' type='nominal' />
+        <column-instance column='[date]' derivation='Month-Trunc' name='[tmn:date:qk]' pivot='key' type='quantitative' />
+        <column caption='Traveller Type' datatype='string' name='[traveller_type]' role='dimension' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone forceUpdate='true' h='13429' id='3' type-v2='text' w='19333' x='167' y='857'>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#ffffff' fontsize='18'>British Airways Review</run>
+          </formatted-text>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='background-color' value='#24693d' />
+          </zone-style>
+        </zone>
+        <zone h='13143' id='4' name='Summary' show-title='false' w='78250' x='19417' y='1286' />
+        <zone h='38143' id='5' name='Map' w='38833' x='58833' y='15286' />
+        <zone h='85286' id='12' param='vert' type-v2='layout-flow' w='16667' x='0' y='15714'>
+          <zone fixed-size='161' h='24143' id='11' is-fixed='true' mode='list' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='16667' x='0' y='15714'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='9429' id='6' name='Map' param='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[tmn:date:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='16667' x='0' y='39857'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='127' h='19286' id='7' is-fixed='true' mode='radiolist' name='Map' param='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:traveller_type:nk]' type-v2='filter' w='16667' x='0' y='49286'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='97' h='15000' id='8' is-fixed='true' mode='radiolist' name='Map' param='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:seat_type:nk]' type-v2='filter' w='16667' x='0' y='68572'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='8714' id='10' mode='dropdown' name='Map' param='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Aircraft (group)]' type-v2='filter' w='16667' x='0' y='83572'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='8714' id='9' mode='dropdown' name='Map' param='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:Continent:nk]' type-v2='filter' w='16667' x='0' y='92286'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+        </zone>
+        <zone h='39143' id='13' name='Month' w='41167' x='17417' y='15143' />
+        <zone h='45286' id='14' name='Aircraft' w='82167' x='17667' y='54571' />
+        <zone h='85571' id='15' type-v2='empty' w='250' x='16583' y='14857'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='background-color' value='#5555ff' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1400' minheight='1400' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='19' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97714' id='18' param='vert' type-v2='layout-flow' w='98666' x='667' y='1143'>
+                <zone forceUpdate='true' h='13429' id='3' type-v2='text' w='19333' x='167' y='857'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#ffffff' fontsize='18'>British Airways Review</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#24693d' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='92' h='13143' id='4' is-fixed='true' name='Summary' show-title='false' w='78250' x='19417' y='1286'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='274' h='39143' id='13' is-fixed='true' name='Month' w='41167' x='17417' y='15143'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='9429' id='6' name='Map' param='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[tmn:date:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='16667' x='0' y='39857'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='127' h='19286' id='7' mode='dropdown' name='Map' param='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:traveller_type:nk]' type-v2='filter' w='16667' x='0' y='49286'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='97' h='15000' id='8' mode='dropdown' name='Map' param='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:seat_type:nk]' type-v2='filter' w='16667' x='0' y='68572'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8714' id='10' mode='dropdown' name='Map' param='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Aircraft (group)]' type-v2='filter' w='16667' x='0' y='83572'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8714' id='9' mode='dropdown' name='Map' param='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:Continent:nk]' type-v2='filter' w='16667' x='0' y='92286'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='267' h='38143' id='5' is-fixed='true' name='Map' w='38833' x='58833' y='15286'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='161' h='24143' id='11' mode='list' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='16667' x='0' y='15714'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45286' id='14' is-fixed='true' name='Aircraft' w='82167' x='17667' y='54571'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{41C4F247-98AC-4CAD-8E95-56AE2CD354F6}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='list' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card param='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[tmn:date:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card mode='radiolist' param='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:traveller_type:nk]' type='filter' />
+            <card mode='radiolist' param='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:seat_type:nk]' type='filter' />
+            <card mode='dropdown' param='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[none:Continent:nk]' type='filter' />
+            <card mode='dropdown' param='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[Aircraft (group)]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{34E06201-560E-43A9-8BD4-5D9D08321C32}' />
+    </window>
+    <window class='worksheet' name='Summary'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{6927B0AB-8DA9-4860-995B-D83B9C8861B5}' />
+    </window>
+    <window class='worksheet' name='Month'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='64'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{ACFF6097-6981-41DA-8F4A-E435EBD00AF3}' />
+    </window>
+    <window class='worksheet' name='Aircraft'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{AEC8B4F9-939A-42AF-A380-7508EE1954AD}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Aircraft' />
+        <viewpoint name='Map'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Month'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Summary'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='10' />
+      <simple-id uuid='{6819E71E-5160-4BB0-9A40-D3DC396DC3B2}' />
+    </window>
+  </windows>
+  <datagraph>
+    <graph>
+      <properties>
+        <default-execution-subgraph-guid value='f4d295bb-4391-4110-a31b-edfe9b32aba0' />
+      </properties>
+      <node-execution-subgraphs>
+        <pair execution-subgraph-guid='f4d295bb-4391-4110-a31b-edfe9b32aba0' node-guid='9041b070-26b0-4dc7-9e13-c3be9aca625b' />
+        <pair execution-subgraph-guid='f4d295bb-4391-4110-a31b-edfe9b32aba0' node-guid='ba8cc652-66af-4b9f-9308-9421ac7d465a' />
+      </node-execution-subgraphs>
+      <nodes>
+        <single-value-field-node fieldname='[Parameters].[Parameter 1]' fieldname-input-guid='74ce4466-8281-4e5d-9e39-8e132cb6fcf1' node-guid='9041b070-26b0-4dc7-9e13-c3be9aca625b' value-output-guid='43b9703a-6d5c-42a5-a2e2-07908d878906' />
+        <_.fcp.DatagraphNodeAxisTitle.true...axis-title-node duplicate-index='0' fieldname='[federated.1bshm6q0p037g21ejcugi0g4hg3r].[avg:Calculation_815151560654557184:qk]' node-guid='ba8cc652-66af-4b9f-9308-9421ac7d465a' orientation='horizontal' sheet-identifier='{269F2764-EAAD-4799-AA87-27519A7A46C2}' title-input-guid='adb760cb-ca4e-4614-91d3-ee313f31c565' />
+      </nodes>
+      <edges>
+        <edge from='43b9703a-6d5c-42a5-a2e2-07908d878906' to='adb760cb-ca4e-4614-91d3-ee313f31c565' />
+      </edges>
+      <pin-values />
+    </graph>
+  </datagraph>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
